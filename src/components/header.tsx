@@ -51,7 +51,7 @@
 //               href="#contact"
 //               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-blue-700 hover:to-purple-700 flex items-center gap-2"
 //             >
-//               Let's Talk
+//               Let&apos;s Talk
 //               <ExternalLink className="w-4 h-4" />
 //             </Link>
 //           </div>
@@ -95,7 +95,7 @@
 //                 onClick={() => setIsMenuOpen(false)}
 //                 className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
 //               >
-//                 Let's Talk
+//                 Let&apos;s Talk
 //                 <ExternalLink className="w-4 h-4" />
 //               </Link>
 //             </div>
@@ -167,7 +167,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-blue-700 hover:to-purple-700 flex items-center gap-2"
             >
-              Let's Talk
+              Let&apos;s Talk
               <MessageCircle className="w-4 h-4" />
             </Link>
           </div>
@@ -213,7 +213,7 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                Let's Talk
+                Let&apos;s Talk
                 <MessageCircle className="w-4 h-4" />
               </Link>
             </div>

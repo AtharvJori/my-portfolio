@@ -244,14 +244,6 @@ const About = () => {
                 );
               })}
             </div>
-
-            {/* CTA Button */}
-            <div className="pt-6">
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                Let's Collaborate
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </div>
           </div>
 
           {/* Right Side - Code Display */}
