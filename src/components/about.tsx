@@ -85,9 +85,9 @@ const About = () => {
     if (line.includes('"name"')) {
       return (
         <>
-          <span className="text-green-400">"name"</span>
+          <span className="text-green-400">&quot;name&quot;</span>
           <span className="text-white">: </span>
-          <span className="text-yellow-300">"Atharv Jori"</span>
+          <span className="text-yellow-300">&quot;Atharv Jori&quot;</span>
           <span className="text-white">,</span>
         </>
       );
@@ -96,7 +96,7 @@ const About = () => {
     if (line.includes('"age"')) {
       return (
         <>
-          <span className="text-green-400">"age"</span>
+          <span className="text-green-400">&quot;age&quot;</span>
           <span className="text-white">: </span>
           <span className="text-blue-300">21</span>
           <span className="text-white">,</span>
@@ -107,10 +107,10 @@ const About = () => {
     if (line.includes('"role"')) {
       return (
         <>
-          <span className="text-green-400">"role"</span>
+          <span className="text-green-400">&quot;role&quot;</span>
           <span className="text-white">: </span>
           <span className="text-yellow-400">[</span>
-          <span className="text-yellow-300">"AI/ML Engineer"</span>
+          <span className="text-yellow-300">&quot;AI/ML Engineer&quot;</span>
           <span className="text-white">,</span>
         </>
       );
@@ -119,7 +119,7 @@ const About = () => {
     if (line.includes('"Data Engineer"')) {
       return (
         <>
-          <span className="text-yellow-300">"Data Engineer"</span>
+          <span className="text-yellow-300">&quot;Data Engineer&quot;</span>
           <span className="text-yellow-400">]</span>
           <span className="text-white">,</span>
         </>
@@ -129,9 +129,11 @@ const About = () => {
     if (line.includes('"passion"')) {
       return (
         <>
-          <span className="text-green-400">"passion"</span>
+          <span className="text-green-400">&quot;passion&quot;</span>
           <span className="text-white">: </span>
-          <span className="text-yellow-300">"Building Intelligence"</span>
+          <span className="text-yellow-300">
+            &quot;Building Intelligence&quot;
+          </span>
           <span className="text-white">,</span>
         </>
       );
@@ -140,9 +142,9 @@ const About = () => {
     if (line.includes('"location"')) {
       return (
         <>
-          <span className="text-green-400">"location"</span>
+          <span className="text-green-400">&quot;location&quot;</span>
           <span className="text-white">: </span>
-          <span className="text-yellow-300">"India"</span>
+          <span className="text-yellow-300">&quot;India&quot;</span>
           <span className="text-white">,</span>
         </>
       );
@@ -151,9 +153,11 @@ const About = () => {
     if (line.includes('"status"')) {
       return (
         <>
-          <span className="text-green-400">"status"</span>
+          <span className="text-green-400">&quot;status&quot;</span>
           <span className="text-white">: </span>
-          <span className="text-yellow-300">"Available for hire"</span>
+          <span className="text-yellow-300">
+            &quot;Available for hire&quot;
+          </span>
         </>
       );
     }
@@ -174,7 +178,7 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Hello, I'm{" "}
+            Hello, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Atharv
             </span>
@@ -190,7 +194,7 @@ const About = () => {
           <div className="space-y-8">
             <div className="prose prose-lg text-gray-700">
               <p className="text-lg leading-relaxed">
-                I'm a passionate{" "}
+                I&apos;m a passionate{" "}
                 <span className="font-semibold text-blue-600">
                   AI/ML Engineer
                 </span>{" "}
