@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  Code,
-  Brain,
-  Database,
-  ChevronRight,
-  Terminal,
-  LucideIcon,
-} from "lucide-react";
+import { Code, Brain, Database, ChevronRight, LucideIcon } from "lucide-react";
 
 interface Skill {
   icon: LucideIcon;
