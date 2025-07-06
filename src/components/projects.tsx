@@ -48,7 +48,7 @@ interface ProjectCardProps {
 }
 
 const ProjectsSection: React.FC = () => {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [setHoveredProject] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showModal, setShowModal] = useState(false);
 
