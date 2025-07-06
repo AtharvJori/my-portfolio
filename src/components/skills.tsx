@@ -272,67 +272,7 @@ interface Skill {
   category: string;
 }
 
-interface CategoryConfig {
-  name: string;
-  icon: React.ReactNode;
-  gradient: string;
-  bgGradient: string;
-  borderColor: string;
-}
-
 const Skills: React.FC = () => {
-  const categoryConfig: CategoryConfig[] = [
-    {
-      name: "Programming",
-      icon: <Code2 className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "from-blue-50 to-cyan-50",
-      borderColor: "border-blue-200",
-    },
-    {
-      name: "Frontend",
-      icon: <Globe className="w-6 h-6" />,
-      gradient: "from-green-500 to-emerald-500",
-      bgGradient: "from-green-50 to-emerald-50",
-      borderColor: "border-green-200",
-    },
-    {
-      name: "Database",
-      icon: <Database className="w-6 h-6" />,
-      gradient: "from-purple-500 to-pink-500",
-      bgGradient: "from-purple-50 to-pink-50",
-      borderColor: "border-purple-200",
-    },
-    {
-      name: "Tools",
-      icon: <Wrench className="w-6 h-6" />,
-      gradient: "from-orange-500 to-red-500",
-      bgGradient: "from-orange-50 to-red-50",
-      borderColor: "border-orange-200",
-    },
-    {
-      name: "Data Engineering",
-      icon: <BarChart3 className="w-6 h-6" />,
-      gradient: "from-indigo-500 to-blue-600",
-      bgGradient: "from-indigo-50 to-blue-50",
-      borderColor: "border-indigo-200",
-    },
-    {
-      name: "Data Platform",
-      icon: <BarChart3 className="w-6 h-6" />,
-      gradient: "from-cyan-500 to-teal-500",
-      bgGradient: "from-cyan-50 to-teal-50",
-      borderColor: "border-cyan-200",
-    },
-    {
-      name: "AI/ML",
-      icon: <Brain className="w-6 h-6" />,
-      gradient: "from-red-500 to-rose-500",
-      bgGradient: "from-red-50 to-rose-50",
-      borderColor: "border-red-200",
-    },
-  ];
-
   const skills: Skill[] = [
     // Programming Languages & Frameworks
     {
@@ -424,8 +364,6 @@ const Skills: React.FC = () => {
     //   category: "AI/ML",
     // },
   ];
-
-  const categories = Array.from(new Set(skills.map((skill) => skill.category)));
 
   return (
     <section className="relative py-20 px-4 w-full overflow-hidden">

@@ -37,7 +37,6 @@
 
 // interface ProjectCardProps {
 //   project: Project;
-//   hoveredProject: number | null;
 //   setHoveredProject: (id: number | null) => void;
 //   isFeatured?: boolean;
 // }
@@ -204,7 +203,6 @@
 //             <FeaturedProjectCard
 //               key={project.id}
 //               project={project}
-//               hoveredProject={hoveredProject}
 //               setHoveredProject={setHoveredProject}
 //             />
 //           ))}
@@ -216,7 +214,6 @@
 //             <ProjectCard
 //               key={project.id}
 //               project={project}
-//               hoveredProject={hoveredProject}
 //               setHoveredProject={setHoveredProject}
 //             />
 //           ))}
@@ -237,7 +234,6 @@
 // // Featured Project Card Component
 // const FeaturedProjectCard: React.FC<ProjectCardProps> = ({
 //   project,
-//   hoveredProject,
 //   setHoveredProject,
 // }) => {
 //   const IconComponent = project.icon;
@@ -308,7 +304,6 @@
 // // Regular Project Card Component
 // const ProjectCard: React.FC<ProjectCardProps> = ({
 //   project,
-//   hoveredProject,
 //   setHoveredProject,
 // }) => {
 //   const IconComponent = project.icon;
@@ -472,7 +467,6 @@
 
 // interface ProjectCardProps {
 //   project: Project;
-//   hoveredProject: number | null;
 //   setHoveredProject: (id: number | null) => void;
 //   isFeatured?: boolean;
 // }
@@ -639,8 +633,8 @@
 //             <FeaturedProjectCard
 //               key={project.id}
 //               project={project}
-//               hoveredProject={hoveredProject}
 //               setHoveredProject={setHoveredProject}
+//               onShowDetails={handleShowDetails}
 //             />
 //           ))}
 //         </div>
@@ -651,8 +645,8 @@
 //             <ProjectCard
 //               key={project.id}
 //               project={project}
-//               hoveredProject={hoveredProject}
 //               setHoveredProject={setHoveredProject}
+//               onShowDetails={handleShowDetails}
 //             />
 //           ))}
 //         </div>
@@ -664,8 +658,8 @@
 // // Featured Project Card Component
 // const FeaturedProjectCard: React.FC<ProjectCardProps> = ({
 //   project,
-//   hoveredProject,
 //   setHoveredProject,
+//   onShowDetails,
 // }) => {
 //   const IconComponent = project.icon;
 
@@ -726,7 +720,7 @@
 //         </div>
 
 //         {/* Action Buttons */}
-//         <ProjectActionButtons project={project} />
+//         <ProjectActionButtons project={project} onShowDetails={onShowDetails} />
 //       </div>
 //     </div>
 //   );
@@ -735,8 +729,8 @@
 // // Regular Project Card Component
 // const ProjectCard: React.FC<ProjectCardProps> = ({
 //   project,
-//   hoveredProject,
 //   setHoveredProject,
+//   onShowDetails,
 // }) => {
 //   const IconComponent = project.icon;
 
@@ -798,7 +792,11 @@
 //         </div>
 
 //         {/* Action Buttons */}
-//         <ProjectActionButtons project={project} isCompact />
+//         <ProjectActionButtons
+//           project={project}
+//           isCompact
+//           onShowDetails={onShowDetails}
+//         />
 //       </div>
 //     </div>
 //   );
@@ -808,11 +806,13 @@
 // interface ProjectActionButtonsProps {
 //   project: Project;
 //   isCompact?: boolean;
+//   onShowDetails: (project: Project) => void;
 // }
 
 // const ProjectActionButtons: React.FC<ProjectActionButtonsProps> = ({
 //   project,
 //   isCompact = false,
+//   onShowDetails,
 // }) => {
 //   const buttonSize = isCompact ? "px-4 py-2 text-sm" : "px-6 py-3";
 //   const iconSize = isCompact ? "w-4 h-4" : "w-4 h-4";
@@ -846,20 +846,24 @@
 //           <span>Code</span>
 //         </Link>
 //       )}
-//       {!project.liveLink && !project.githubLink && (
-//         <div
-//           className={`flex items-center gap-2 ${buttonSize} bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-gray-400 rounded-lg font-medium`}
-//         >
-//           <ExternalLink className={iconSize} />
-//           <span>{isCompact ? "Details" : "Project Details"}</span>
-//         </div>
-//       )}
+
+//       {/* Always show Details button */}
+//       <button
+//         onClick={() => onShowDetails(project)}
+//         className={`flex items-center gap-2 ${buttonSize} ${
+//           project.liveLink || project.githubLink
+//             ? "bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600"
+//             : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transform hover:scale-105"
+//         } rounded-lg font-medium transition-all duration-300`}
+//       >
+//         <ExternalLink className={iconSize} />
+//         <span>{isCompact ? "Details" : "View Details"}</span>
+//       </button>
 //     </div>
 //   );
 // };
 
 // export default ProjectsSection;
-
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -905,7 +909,6 @@ type ProjectCategory =
 
 interface ProjectCardProps {
   project: Project;
-  hoveredProject: number | null;
   setHoveredProject: (id: number | null) => void;
   isFeatured?: boolean;
   onShowDetails: (project: Project) => void;
@@ -1135,7 +1138,6 @@ const ProjectsSection: React.FC = () => {
             <FeaturedProjectCard
               key={project.id}
               project={project}
-              hoveredProject={hoveredProject}
               setHoveredProject={setHoveredProject}
               onShowDetails={handleShowDetails}
             />
@@ -1148,7 +1150,6 @@ const ProjectsSection: React.FC = () => {
             <ProjectCard
               key={project.id}
               project={project}
-              hoveredProject={hoveredProject}
               setHoveredProject={setHoveredProject}
               onShowDetails={handleShowDetails}
             />
@@ -1311,7 +1312,6 @@ const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({
 // Featured Project Card Component
 const FeaturedProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  hoveredProject,
   setHoveredProject,
   onShowDetails,
 }) => {
@@ -1383,7 +1383,6 @@ const FeaturedProjectCard: React.FC<ProjectCardProps> = ({
 // Regular Project Card Component
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  hoveredProject,
   setHoveredProject,
   onShowDetails,
 }) => {
