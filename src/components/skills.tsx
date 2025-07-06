@@ -256,15 +256,7 @@
 
 import React from "react";
 import Image from "next/image";
-import {
-  Code2,
-  Database,
-  Wrench,
-  BarChart3,
-  Brain,
-  Globe,
-  Sparkles,
-} from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 interface Skill {
   name: string;
